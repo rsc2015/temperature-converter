@@ -44,10 +44,11 @@ span {
     margin: 10px;
    /*align-content: space-evenly;*/
    text-align:left;
+   
   }
   .innerDiv > div {
     background-color: rgba(255, 255, 255, 0.8);
-    
+    border: 2px solid darkgrey;
     padding: 10px 50px;
     font-size: 20px;
   }
