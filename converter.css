@@ -20,11 +20,11 @@
     'menu menu main main right right'
     'menu menu footer footer footer footer';
   grid-gap: 10px;
-  background-color: rgba(241, 208, 154, 0.8);
+  background-color: rgba(255, 255, 255, 0);
   padding: 10px;
 }
 .grid-container > div {
-  background-color: rgba(241, 208, 154, 0.8);
+  background-color: rgba(255, 255, 255, 0);
   text-align: center;
   padding: 20px 0;
   font-size: 80px;
@@ -39,7 +39,7 @@ span {
     justify-content: space-evenly;
     grid-template-columns:  400px ;/*Make the grid smaller than the container*/
     grid-gap: 10px;
-    background-color: rgb(241, 208, 154, 0.8);
+    background-color: rgba(255, 255, 255, 0);
     padding: 10px;
     margin: 10px;
    /*align-content: space-evenly;*/
@@ -47,10 +47,11 @@ span {
    
   }
   .innerDiv > div {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(150, 79, 128, 0.8);
     border: 2px solid darkgrey;
     padding: 10px 50px;
     font-size: 20px;
+    
   }
 
   #temperature{
@@ -58,7 +59,8 @@ span {
     width:90%;
     font-size: 20px;
     padding: 2px;
-    margin-bottom:30px;
+    margin-bottom:10px;
+    text-align: center;
   }
 
   #enterTemp{
@@ -101,4 +103,6 @@ span {
   height: 100%;
   font-size: 20px;
   padding:0px;
+  background-color: rgb(77, 140, 223);
+  cursor: pointer;
 }
