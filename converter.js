@@ -12,28 +12,12 @@ console.log("converter.js");
 - [ ] If the temperature is less than 32F/0C the color of the converted temperature should be blue.
 - [ ] For any other temperature, the color should be green.*/
 
-function toCelsius() {
-    var input = document.getElementById('temperature').value;
-    input = parseFloat(input);
-    document.getElementById("converted").innerHTML = ((input-32)/1.8).toFixed(2);
-    var fahTemp = (document.getElementById("converted").innerHTML);
-    console.log(fahTemp);
-    }
-  
-function toFahrenheit() {
-  input = document.getElementById('temperature').value;
-  input = parseFloat(input);
-  document.getElementById("converted").innerHTML = (1.8 * input) + 32;
-  var celTemp = (document.getElementById("converted").innerHTML).value;
-}
 
 // Get a reference to the button element in the DOM
 let button = document.getElementById("conversionbtn").addEventListener("click", determineConverter);
-// Assign a function to be executed when the button is clicked
-//button.addEventListener("click", determineConverter);
+// Assign a function to be executed when the button is clicked button.addEventListener("click", determineConverter);
 
-// This function should determine which conversion should
-// happen based on which radio button is selected.
+// This function should determine which conversion should happen based on which radio button is selected.
 function determineConverter (clickEvent) {
   if(document.getElementById('celTofah').checked) {
     //celTofah radio button is checked
@@ -44,28 +28,69 @@ function determineConverter (clickEvent) {
   }
 }
 
-      const changeInputColor = () => {
-        let fahTemp = document.getElementById("converted").innerHTML;
-        console.log(fahTemp);
-        let celTemp = document.getElementById("converted").innerHTML;
-              if (fahTemp > 90 || celTemp > 32){
-            //If the temperature is greater than 90F/32C the color of the converted temperature should be red.
-              document.getElementById("converted").style.color = "red";
-           } else if(fahTemp < 32 || celTemp === 0){
-             //If the temperature is less than 32F/0C the color of the converted temperature should be blue.
-              document.getElementById("converted").style.color = "blue";
-           } else if (fahTemp < 0 || celTemp < 0){
-             // For any other temperature, the color should be green.*/
-              document.getElementById("converted").style.color = "green";
-          }
-          }
-          changeInputColor();
+//function to convert the input value into Celsius
+function toCelsius() {
+    var input = document.getElementById('temperature').value;
+    input = parseFloat(input);
+   document.getElementById("converted").innerHTML = ((input-32)/1.8).toFixed(2);
+    var celValue = document.getElementById("converted").innerHTML;
+    return changeOutputC();
+    }
+  
+  //function to convert the input value into Fahrenheit
+function toFahrenheit() {
+  input = document.getElementById('temperature').value;
+  input = parseFloat(input);
+  document.getElementById("converted").innerHTML = (1.8 * input) + 32;
+  var fahValue = (document.getElementById("converted").innerHTML);
+  return changeOutputF();
+}
 
+//function to convert the Fahrenheit output to change color as per condition
+          const changeOutputF = () => {     
+          let fahTemp = document.getElementById("converted").innerText;
+          console.log(fahTemp);
+                  if (fahTemp > 90) {
+                //If the temperature is greater than 90F/32C the color of the converted temperature should be red.
+                document.getElementById("converted").style.color = "red";
+              } else if(fahTemp < 32 ) {
+                //If the temperature is less than 32F/0C the color of the converted temperature should be blue.
+                  document.getElementById("converted").style.color = "blue";
+            } else {
+              // For any other temperature, the color should be green.*/
+                document.getElementById("converted").style.color = "green";
+            }
+              }
+//function to convert the Celsius output to change color as per condition
+          const changeOutputC = () => {     
+            let celTemp = document.getElementById("converted").innerText;
+            console.log(celTemp);
+                    if (celTemp > 32) {
+                  //If the temperature is greater than 90F/32C the color of the converted temperature should be red.
+                   document.getElementById("converted").style.color = "red";
+                 } else if(celTemp < 0 ) {
+                  //If the temperature is less than 32F/0C the color of the converted temperature should be blue.
+                    document.getElementById("converted").style.color = "blue";
+               } else {
+                // For any other temperature, the color should be green.*/
+                  document.getElementById("converted").style.color = "green";
+               }
+                }
+                changeOutputC();
+                changeOutputF();
+
+                
           //Create another button that, when clicked, clears any text in the input field.
           let resetBtn = document.getElementById("reset").addEventListener("click", resetAllField);
+          consol.log("resetBtn", resetBtn);
 
-         const resetAllFields = () => {
-            document.getElementById("resetAll").reset();
-        }
+         const resetAllField = () => {
+          document.getElementById("temperature").value = "";
+          document.getElementById("converted").value = "";
+          }
 
-        resetAllFields();
+          resetAllField();
+
+        
+
+            
