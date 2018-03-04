@@ -12,31 +12,25 @@
     <div class="grid-container">
         <div class="item1"><span>Temperature Converter</span></div>
         <div class="item2"></div>
-        <div class="item3" id="resetAll">
+        <div class="item3">
             <div class="innerDiv">
-                    <div id="enterTemp"><label for="temperature">Enter Temperature here:</label>
-            <input type="number" id="temperature"></div>
-           
-                    
-                    <div id="radioForm" class="toggle-btn-grp">
-                        <label onclick="" class="toggle-btn noscript"><input type="radio" name="group2" id="celTofah" value="fah"/>To Fahrenheit</label><br>
-                        <label onclick="" class="toggle-btn noscript"><input type="radio" name="group2" id="fahTocel" value="cel"/>To Celsius</label><br>
-                            <!--<form>
-                                   <input type="radio" id="celTofah" checked="checked" value="to °F">To Fahrenheit<br>
-                                   <input type="radio"  id="fahTocel" value="to °C">To Celsius<br/>
-                                    
-                           </form>--> <button id="reset" value="Reset all">Reset All</button>
-                        
-                           <!--<input type="radio" name="celsius" value="deg">To Celsius<br>
-                           <input type="radio" name="fahrenheit" value="fah">To Fahrenheit<br>-->
-                       </div>
-                    
-                  
-            
-                <button id="conversionbtn">Click here for Conversion</button>
+                <div id="enterTemp">
+                    <form id="resetAll">
+                            <label for="temperature">Enter Temperature here:</label>
+                            <input type="number" id="temperature">
+                            <label for="temperature">Converted Temperature here:</label>
+                            <div id ="converted"></div>
+                            </div>
+                            <div id="radioForm" class="toggle-btn-grp">
+                                <label onclick="" class="toggle-btn noscript"><input type="radio" name="group2" id="celTofah" value="fah"/>To Fahrenheit</label><br>
+                                <label onclick="" class="toggle-btn noscript"><input type="radio" name="group2" id="fahTocel" value="cel"/>To Celsius</label><br>
+                                <button value="Reset" id="reset">Reset</button><!--<input type="button" value="Reset" id="reset">-->
+                    </form>
+                </div>
+        <button id="conversionbtn">Click here for Conversion</button>
               
-            <div><label for="temperature">Converted Temperature here:</label><div id ="converted"></div></div>
-          </div><!--3 resetAll-->
+            <!--<div><label for="temperature">Converted Temperature here:</label><div id ="converted"></div></div>-->
+        </div><!--3 resetAll-->
         </div>  
         <div class="item4"></div>
         <div class="item5"></div>
